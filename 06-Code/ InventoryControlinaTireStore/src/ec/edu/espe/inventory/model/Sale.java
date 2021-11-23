@@ -3,7 +3,7 @@ package ec.edu.espe.inventory.model;
 
 /**
  *
- * @author Caisatoa
+ * @author WorksBotsTeam
  */
 public class Sale {
     private float price;

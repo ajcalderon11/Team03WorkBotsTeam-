@@ -3,7 +3,7 @@ package ec.edu.espe.inventory.model;
 
 /**
  *
- * @author Caisatoa
+ * @author WorksBotsTeam
  */
 public class Time {
     private int day;
@@ -12,7 +12,7 @@ public class Time {
 
     public void buy(){
     
-}
+    }
     
     public void sell(){
         
