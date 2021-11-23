@@ -1,4 +1,3 @@
-
 package ec.edu.espe.inventory.model;
 
 /**
@@ -6,9 +5,9 @@ package ec.edu.espe.inventory.model;
  * @author WorBotsTeam
  */
 public class Products {
-    private int codigo;
-    private String nombre;
-    private float precio;
+    private int code;
+    private String name;
+    private float price;
     
     public void seeifthereisinstock(){
     }
