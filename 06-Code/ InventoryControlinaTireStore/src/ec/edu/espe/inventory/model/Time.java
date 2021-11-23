@@ -19,6 +19,6 @@ public class Time {
     }
 
     public void stock(){
-        
+       
     }
 }
