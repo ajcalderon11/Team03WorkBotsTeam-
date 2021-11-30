@@ -3,18 +3,26 @@ package ec.edu.espe.inventory.model;
 
 /**
  *
- * @author WorksBotsTeam
+ * @author WorkbotsTeam
  */
 public class Provider {
-    private String name;
-    private int telephone;
-    private String email;
-    private String addres;
-    private int ID;
-    private String gender;
     
-    public void Sell(int quantity){
+    String name;
+    int telefone;
+    String email;
+    String address;
+    int id;
+    String gender;
+    
+    public void sell(int quantity){
         
     }
     
+    public void kindProduct(){
+        
+    }
+    
+    public void priceProduct(){
+        
+    }
 }
