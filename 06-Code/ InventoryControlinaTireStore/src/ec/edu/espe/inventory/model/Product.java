@@ -4,18 +4,18 @@ package ec.edu.espe.inventory.model;
  *
  * @author WorBotsTeam
  */
-public class Products {
+public class Product {
     private int code;
     private String name;
     private float price;
 
-    public Products(int code, String name, float price) {
+    public Product(int code, String name, float price) {
         this.code = code;
         this.name = name;
         this.price = price;
     }
     
-    public Products() {
+    public Product() {
         this.code = code;
         this.name = name;
         this.price = price;

@@ -1,61 +1,122 @@
 
 package ec.edu.espe.inventory.view;
 
-import ec.edu.espe.inventory.model.Average;
-import ec.edu.espe.inventory.model.Company;
-import ec.edu.espe.inventory.model.Price;
-import ec.edu.espe.inventory.model.Products;
-import ec.edu.espe.inventory.model.Provider;
-import ec.edu.espe.inventory.model.Purchase;
-import ec.edu.espe.inventory.model.Sale;
-import ec.edu.espe.inventory.model.Seller;
-import ec.edu.espe.inventory.model.Stock;
-import ec.edu.espe.inventory.model.Time;
+import java.util.Scanner;
+import java.util.Vector;
 
 /**
  *
  * @author WorBotsTeam
  */
 public class InventoryTireStore {
+
+    
+    static Scanner input = new Scanner(System.in);
+    static String name;
+    static double price;
+    static int option,stock,code;
+    
     public static void main(String[] args) {
-        Time time = new Time(0);
-        Stock stock = new Stock();
-        Seller seller = new Seller();
-        Sale sale = new Sale();
-        Purchase purchase = new Purchase();
-        Provider provider = new Provider();
-        Price price = new Price();
-        Products products = new Products();
-        Company company = new Company();
-        Average average = new Average();
         
         
-        System.out.println("the time");
-        System.out.println("-->"+ time);        
-        
-        System.out.println("the stock");
-        System.out.println("-->"+ stock);        
-        
-        System.out.println("the sale");
-        System.out.println("-->"+ sale);        
-        
-        System.out.println("the purchase");
-        System.out.println("-->"+ purchase);        
-        
-        System.out.println("the provider");
-        System.out.println("-->"+ provider);        
-        
-        System.out.println("the price");
-        System.out.println("-->"+ price);        
-        
-        System.out.println("the products");
-        System.out.println("-->"+ products);        
-        
-        System.out.println("the company");
-        System.out.println("-->"+ company);        
-        
-        System.out.println("the average");
-        System.out.println("-->"+ average);
-        
+        Product product;
+        Vector products = new Vector();        
+        do{
+            System.out.print("\nMENU \n 1. Register purchase --> \n 2. Register sale --> \n 3. Search product --> \n 4. Exit -->");
+            option = input.nextInt();
+            
+            switch(option){
+                case 1:
+                     System.out.print("Please enter code: ");
+                     code = input.nextInt(); 
+                     System.out.print("Please enter name: ");
+                     name = input.next();
+                     System.out.print("Please enter price: ");
+                     price = input.nextDouble();
+                     System.out.print("Exit: ");
+                     stock = input.nextInt();
+                     product = search(code, products);
+                     if(product==null){
+                        products.addElement(new Product(code,name,price,stock));
+                        System.out.print("Product added");
+                     }
+                     else
+                         System.out.print("this product already exists");
+                         
+                    break;
+                    
+                case 2:  
+                     System.out.print("Please enter code: ");
+                     code = input.nextInt();
+                     product = search(code, products);
+                     if(product!=null){
+                         if(product.getStock() > 0){ 
+                            product.setStock(product.getStock() - 1);
+                            System.out.print("Sale made");
+                            product.showResult();
+                         }
+                         else
+                             System.out.print("Out of stock");
+                     }
+                     else 
+                        System.out.print("Non-existent product");
+                     
+                    break;
+                    
+                case 3:
+                     System.out.print("Please enter code: ");
+                     code = input.nextInt();
+                     product = search(code, products);
+                     if(product!=null)
+                        product.showResult();
+                     else 
+                        System.out.print("Non-existent product");                     
+                    break;
+                    
+                case 4:
+                    break;
+                    
+                default: System.out.println("please enter menu option");
+            }            
+        }while(option!= 4);
+    }    
+    static Product search(int codigo, Vector products){
+        boolean band = false;
+        Product product,retornP = null;
+        for(int x = 0; x < products.size(); x++){ 
+            product = (Product) products.elementAt(x);
+            if(product.getCodigo() == codigo)
+                retornP = product;
+        }
+        return retornP;
+    }
+}
+
+class  Product{
+    int code ,stock;
+    double price;
+    String name;
+    
+    Product(int code, String name, double price, int stock){
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+
+    public void setStock(int stock){
+        this.stock = stock;
+    }
+    public int getCodigo(){
+        return this.code;
+    }
+    public int getStock(){
+        return this.stock;
+    }
+    public void showResult(){
+        System.out.println("\nName is = " + this.name + "\t  Price is = "+ this.price + "\t  Stock is = "+ this.stock);
+    }
+    public void showResultGraphic(){
+        javax.swing.JOptionPane.showMessageDialog(null,"\nName is = " + this.name + "\t  Price is = "+ this.price + "\t  Stock is = "+ this.stock);
     }
 }
