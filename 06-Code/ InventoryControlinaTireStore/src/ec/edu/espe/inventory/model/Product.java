@@ -5,72 +5,87 @@ package ec.edu.espe.inventory.model;
  * @author WorBotsTeam
  */
 public class Product {
-    private int code;
-    private String name;
-    private float price;
 
-    public Product(int code, String name, float price) {
+    private static String name;
+    private static int price;
+    private static int stock;
+    private static int code;
+
+    public Product(String name,int code, int price, int stock) {
         this.code = code;
         this.name = name;
         this.price = price;
+        this.stock = stock;
     }
     
     public Product() {
-        this.code = code;
-        this.name = name;
-        this.price = price;
-    }
-    
-    public void viewInStock(){
-    }
-    
-    public boolean sell(){
-        return false;
-    }
-    public boolean buy (){
-        return false;  
-    } 
-
-    /**
-     * @return the code
-     */
-    public int getCode() {
-        return code;
+        
     }
 
-    /**
-     * @param code the code to set
-     */
-    public void setCode(int code) {
-        this.code = code;
+    public void print(){
+        System.out.println("The id --> " + getCode());
+        System.out.println("The name is --> " + getName());
+        System.out.println("The color is --> " + getPrice());
+        System.out.println("The age is --> " + getStock());
     }
 
     /**
      * @return the name
      */
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
     /**
-     * @param name the name to set
+     * @param aName the name to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public static void setName(String aName) {
+        name = aName;
     }
 
     /**
      * @return the price
      */
-    public float getPrice() {
+    public static int getPrice() {
         return price;
     }
 
     /**
-     * @param price the price to set
+     * @param aPrice the price to set
      */
-    public void setPrice(float price) {
-        this.price = price;
+    public static void setPrice(int aPrice) {
+        price = aPrice;
     }
+
+    /**
+     * @return the stock
+     */
+    public static int getStock() {
+        return stock;
+    }
+
+    /**
+     * @param aStock the stock to set
+     */
+    public static void setStock(int aStock) {
+        stock = aStock;
+    }
+
+    /**
+     * @return the code
+     */
+    public static int getCode() {
+        return code;
+    }
+
+    /**
+     * @param aCode the code to set
+     */
+    public static void setCode(int aCode) {
+        code = aCode;
+    }
+        
+
+    
  }
     
