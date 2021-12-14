@@ -1,6 +1,9 @@
 
 package ec.edu.espe.inventory.view;
 
+//import ec.edu.espe.inventory.model.Product;
+//import ec.edu.espe.inventory.model.Stock;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -11,18 +14,27 @@ import java.util.Vector;
 public class InventoryTireStore {
 
     
-    static Scanner input = new Scanner(System.in);
-    static String name;
-    static double price;
-    static int option,stock,code;
-    
     public static void main(String[] args) {
-        
+        /*
+        Stock stock = new Stock();
+        Product product = new Product();
+        */
+        Scanner input = new Scanner(System.in);
+        String name;
+        int price;
+        int option;
+        int quantity;
+        int code;
         
         Product product;
+        //ArrayList<Product> products = new ArrayList();
         Vector products = new Vector();        
         do{
-            System.out.print("\nMENU \n 1. Register purchase --> \n 2. Register sale --> \n 3. Search product --> \n 4. Exit -->");
+            System.out.print("\nMENU \n 1. Register purchase -->\n");
+            System.out.println("2. Register sale -->");
+            System.out.println("3. Search product -->");
+            System.out.println("4. Exit -->");
+            
             option = input.nextInt();
             
             switch(option){
@@ -32,16 +44,16 @@ public class InventoryTireStore {
                      System.out.print("Please enter name: ");
                      name = input.next();
                      System.out.print("Please enter price: ");
-                     price = input.nextDouble();
-                     System.out.print("Exit: ");
-                     stock = input.nextInt();
+                     price = input.nextInt();
+                     System.out.print("please quantity in the Stock: ");
+                     quantity = input.nextInt();
                      product = search(code, products);
-                     if(product==null){
-                        products.addElement(new Product(code,name,price,stock));
+                     if(product ==null){
+                        products.addElement(new Product(code,name,price,quantity));
                         System.out.print("Product added");
                      }
                      else
-                         System.out.print("this product already exists");
+                         System.out.print("this product already exists"); 
                          
                     break;
                     
@@ -50,10 +62,10 @@ public class InventoryTireStore {
                      code = input.nextInt();
                      product = search(code, products);
                      if(product!=null){
-                         if(product.getStock() > 0){ 
-                            product.setStock(product.getStock() - 1);
+                         if(product.getQuantity() > 0){ 
+                            product.setQuantity(product.getQuantity() - 1);
                             System.out.print("Sale made");
-                            product.showResult();
+                            product.print();
                          }
                          else
                              System.out.print("Out of stock");
@@ -68,7 +80,7 @@ public class InventoryTireStore {
                      code = input.nextInt();
                      product = search(code, products);
                      if(product!=null)
-                        product.showResult();
+                        product.print();
                      else 
                         System.out.print("Non-existent product");                     
                     break;
@@ -80,43 +92,77 @@ public class InventoryTireStore {
             }            
         }while(option!= 4);
     }    
-    static Product search(int codigo, Vector products){
+    static Product search(int code, Vector products){
         boolean band = false;
-        Product product,retornP = null;
+        Product price,retornP = null;
         for(int x = 0; x < products.size(); x++){ 
-            product = (Product) products.elementAt(x);
-            if(product.getCodigo() == codigo)
-                retornP = product;
+            price = (Product) products.elementAt(x);
+            if(price.getCode() == code)
+                retornP = price;
         }
         return retornP;
     }
 }
 
 class  Product{
-    int code ,stock;
-    double price;
-    String name;
+    int code ,quantity;
+    private double price;
+    private String name;
     
-    Product(int code, String name, double price, int stock){
+    Product(int code, String name, double price, int quantity){
         this.code = code;
         this.name = name;
         this.price = price;
-        this.stock = stock;
+        this.quantity = quantity;
     }
 
-    public void setStock(int stock){
-        this.stock = stock;
+    public void setQuantity(int quantity){
+        this.quantity = quantity;                     
     }
-    public int getCodigo(){
+    public int getCode(){
         return this.code;
     }
-    public int getStock(){
-        return this.stock;
+    public int getQuantity(){
+        return this.quantity;
     }
     public void showResult(){
-        System.out.println("\nName is = " + this.name + "\t  Price is = "+ this.price + "\t  Stock is = "+ this.stock);
+        System.out.println("\nName is = " + this.getName() + "\t  Price is = "+ this.getPrice() + "\t  Stock is = "+ this.quantity);
     }
     public void showResultGraphic(){
-        javax.swing.JOptionPane.showMessageDialog(null,"\nName is = " + this.name + "\t  Price is = "+ this.price + "\t  Stock is = "+ this.stock);
+        javax.swing.JOptionPane.showMessageDialog(null,"\nName is = " + this.getName() + "\t  Price is = "+ this.getPrice() + "\t  Stock is = "+ this.quantity);
+    }
+    public void print(){
+        System.out.println("The id --> " + getCode());
+        System.out.println("The name is --> " + getName());
+        System.out.println("The color is --> " + getPrice());
+        System.out.println("The age is --> " + getQuantity());
+    }
+
+    /**
+     * @return the price
+     */
+    public double getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 }
