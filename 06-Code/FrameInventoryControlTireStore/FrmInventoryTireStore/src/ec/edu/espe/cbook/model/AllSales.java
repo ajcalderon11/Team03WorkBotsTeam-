@@ -2,11 +2,11 @@
 package ec.edu.espe.cbook.model;
 
 import com.mongodb.client.MongoCollection;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import com.mongodb.client.MongoCursor;
 import ec.edu.espe.cbook.view.FrmInventory;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
 
@@ -14,24 +14,23 @@ import org.bson.Document;
  *
  * @author Caisatoa
  */
-public class AllProduct extends javax.swing.JFrame {
+public class AllSales extends javax.swing.JFrame {
 
     Calendar fecha_actual = new GregorianCalendar();
-    MongoCollection<Document> PurchaseRecord = new Connection().obtenerDB().getCollection("PurchaseRecord");    
-    DefaultTableModel tabla = new DefaultTableModel(){
+    MongoCollection<Document> SaleRecord = new Connection().obtenerDB().getCollection("SaleRecord");    
+    DefaultTableModel tabla2 = new DefaultTableModel(){
         @Override
         public boolean isCellEditable(int row, int column) {
             return false; //To change body of generated methods, choose Tools | Templates.
         }
         
     };
-    public AllProduct() {
+    public AllSales() {
         initComponents();
-        tblContacts.setModel(tabla);
+        tblSales.setModel(tabla2);
         
-        tabla.addColumn("ID CLOUD");tabla.addColumn("ID TIRE");tabla.addColumn("NAME");
-        ;tabla.addColumn("QUANTITY");tabla.addColumn("PRICE");tabla.addColumn("CONDITION");
-        tabla.addColumn("DATE");tabla.addColumn("COMMENT");
+        tabla2.addColumn("ID CLOUD");tabla2.addColumn("ID TIRE");tabla2.addColumn("QUANTITY");
+        tabla2.addColumn("PRICE");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
     }
 
     @SuppressWarnings("unchecked")
@@ -39,14 +38,14 @@ public class AllProduct extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblContacts = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tblSales = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblContacts.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        tblContacts.setModel(new javax.swing.table.DefaultTableModel(
+        tblSales.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        tblSales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -57,21 +56,19 @@ public class AllProduct extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(tblContacts);
+        jScrollPane2.setViewportView(tblSales);
 
-        jToggleButton1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jToggleButton1.setText("Upload");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jButton1.setText("Return");
+        jButton1.setText("UPLOAD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("RETURN");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -80,55 +77,52 @@ public class AllProduct extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addGap(37, 37, 37)
+                .addContainerGap(679, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(68, 68, 68))
+                .addGap(37, 37, 37)
+                .addComponent(jButton2)
+                .addGap(37, 37, 37))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 789, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        view();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        MongoCursor<Document> consult = SaleRecord.find().iterator();
+        
+        int total = tabla2.getRowCount();
+        for(int i = 0; i<total; i++){
+            tabla2.removeRow(0);
+        }
+        while(consult.hasNext()){
+            ArrayList<Object> doc = new ArrayList<Object>(consult.next().values());
+            tabla2.addRow(doc.toArray());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         FrmInventory frmContacts = new FrmInventory();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-public void view(){
-        
-        MongoCursor<Document> consult = PurchaseRecord.find().iterator();
-        
-        int total = tabla.getRowCount();
-        for(int i = 0; i<total; i++){
-            tabla.removeRow(0);
-        }
-        while(consult.hasNext()){
-            ArrayList<Object> doc = new ArrayList<Object>(consult.next().values());
-            tabla.addRow(doc.toArray());
-        }
-    }
     /**
      * @param args the command line arguments
      */
@@ -146,28 +140,28 @@ public void view(){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AllProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllSales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AllProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllSales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AllProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllSales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AllProduct.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AllSales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AllProduct().setVisible(true);
+                new AllSales().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JTable tblContacts;
+    private javax.swing.JTable tblSales;
     // End of variables declaration//GEN-END:variables
 }
