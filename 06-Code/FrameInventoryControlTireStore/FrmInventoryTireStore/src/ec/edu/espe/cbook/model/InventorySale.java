@@ -5,24 +5,13 @@ package ec.edu.espe.cbook.model;
  *
  * @author Caisatoa
  */
-public class Contact {
+public class InventorySale {
     private int id;
-    private String name;
+    private int quantity;
     private float price;
-    private String condition;
     private String date;
     private String comments;
 
-    public Contact(int id, String name, float price, String condition, String date, String comments) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.condition = condition;
-        this.date = date;
-        this.comments = comments;
-    }
-
-    
     /**
      * @return the id
      */
@@ -38,17 +27,17 @@ public class Contact {
     }
 
     /**
-     * @return the name
+     * @return the quantity
      */
-    public String getName() {
-        return name;
+    public int getQuantity() {
+        return quantity;
     }
 
     /**
-     * @param name the name to set
+     * @param quantity the quantity to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     /**
@@ -63,20 +52,6 @@ public class Contact {
      */
     public void setPrice(float price) {
         this.price = price;
-    }
-
-    /**
-     * @return the condition
-     */
-    public String getCondition() {
-        return condition;
-    }
-
-    /**
-     * @param condition the condition to set
-     */
-    public void setCondition(String condition) {
-        this.condition = condition;
     }
 
     /**
@@ -106,6 +81,6 @@ public class Contact {
     public void setComments(String comments) {
         this.comments = comments;
     }
-
+    
     
 }
