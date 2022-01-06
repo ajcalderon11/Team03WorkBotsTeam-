@@ -23,7 +23,7 @@ public class AllSales extends javax.swing.JFrame {
         public boolean isCellEditable(int row, int column) {
             return false; //To change body of generated methods, choose Tools | Templates.
         }
-        
+        //
     };
     public AllSales() {
         initComponents();
@@ -32,8 +32,9 @@ public class AllSales extends javax.swing.JFrame {
         tabla2.addColumn("ID CLOUD");tabla2.addColumn("ID TIRE");tabla2.addColumn("QUANTITY");
         tabla2.addColumn("PRICE");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
     }
-
+//
     @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -105,7 +106,7 @@ public class AllSales extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         MongoCursor<Document> consult = SaleRecord.find().iterator();
-        
+ //       
         int total = tabla2.getRowCount();
         for(int i = 0; i<total; i++){
             tabla2.removeRow(0);
@@ -115,14 +116,14 @@ public class AllSales extends javax.swing.JFrame {
             tabla2.addRow(doc.toArray());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+//
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         FrmInventory frmContacts = new FrmInventory();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+//
     /**
      * @param args the command line arguments
      */
@@ -157,7 +158,7 @@ public class AllSales extends javax.swing.JFrame {
             }
         });
     }
-
+//
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

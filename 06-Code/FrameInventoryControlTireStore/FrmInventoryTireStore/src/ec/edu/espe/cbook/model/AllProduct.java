@@ -23,7 +23,7 @@ public class AllProduct extends javax.swing.JFrame {
         public boolean isCellEditable(int row, int column) {
             return false; //To change body of generated methods, choose Tools | Templates.
         }
-        
+ //       
     };
     public AllProduct() {
         initComponents();
@@ -104,7 +104,7 @@ public class AllProduct extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         view();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
@@ -115,7 +115,7 @@ public class AllProduct extends javax.swing.JFrame {
         frmContacts.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+//
 public void view(){
         
         MongoCursor<Document> consult = PurchaseRecord.find().iterator();
@@ -171,3 +171,5 @@ public void view(){
     private javax.swing.JTable tblContacts;
     // End of variables declaration//GEN-END:variables
 }
+
+//declaration

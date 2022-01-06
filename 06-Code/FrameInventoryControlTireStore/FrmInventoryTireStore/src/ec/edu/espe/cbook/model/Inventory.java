@@ -34,7 +34,7 @@ public class Inventory {
     public int getId() {
         return id;
     }
-
+//
     /**
      * @param id the id to set
      */
@@ -48,7 +48,7 @@ public class Inventory {
     public String getName() {
         return name;
     }
-
+//
     /**
      * @param name the name to set
      */
