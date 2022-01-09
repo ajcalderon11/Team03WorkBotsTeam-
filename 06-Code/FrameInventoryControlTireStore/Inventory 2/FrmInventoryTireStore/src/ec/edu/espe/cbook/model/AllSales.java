@@ -4,6 +4,7 @@ package ec.edu.espe.cbook.model;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import ec.edu.espe.cbook.view.FrmInventory;
+import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -117,7 +118,7 @@ public class AllSales extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        FrmInventory frmContacts = new FrmInventory();
+        FrmInventoryStart frmContacts = new FrmInventoryStart();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();

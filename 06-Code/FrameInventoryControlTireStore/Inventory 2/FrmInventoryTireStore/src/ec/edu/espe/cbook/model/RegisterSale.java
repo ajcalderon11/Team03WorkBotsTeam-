@@ -3,6 +3,7 @@ package ec.edu.espe.cbook.model;
 
 import com.mongodb.client.MongoCollection;
 import ec.edu.espe.cbook.view.FrmInventory;
+import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
@@ -250,7 +251,7 @@ public class RegisterSale extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        FrmInventory frmContacts = new FrmInventory();
+        FrmInventoryStart frmContacts = new FrmInventoryStart();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();

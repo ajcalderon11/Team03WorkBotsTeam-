@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.cbook.view;
 
+import ec.edu.espe.cbook.model.AllProduct;
+import ec.edu.espe.cbook.model.AllSales;
 import ec.edu.espe.cbook.model.ModifyProduct;
 import ec.edu.espe.cbook.model.ModifySale;
 import ec.edu.espe.cbook.model.RegisterSale;
@@ -12,7 +14,7 @@ import ec.edu.espe.cbook.model.SaleUpload;
 
 /**
  *
- * @author Kerly
+ * @author Kerly Correa- Sebastián Caisatoa
  */
 public class FrmInventoryStart extends javax.swing.JFrame {
 
@@ -21,6 +23,7 @@ public class FrmInventoryStart extends javax.swing.JFrame {
      */
     public FrmInventoryStart() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -36,11 +39,11 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        ItmProductSold = new javax.swing.JMenuItem();
         ItmProduct = new javax.swing.JMenuItem();
+        ItmProductSold = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        ItmModifySale = new javax.swing.JMenuItem();
         ItmModifyProduct = new javax.swing.JMenuItem();
+        ItmModifySale = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         ItmShowProduct = new javax.swing.JMenuItem();
         ItmShowSales = new javax.swing.JMenuItem();
@@ -51,7 +54,8 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 51, 51));
         jLabel1.setText("WELCOME TO INVENTORY TIRE STORE ");
 
-        jButton1.setText("Exit");
+        jButton1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jButton1.setText("EXIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -59,15 +63,9 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         });
 
         jMenu1.setText("Add");
+        jMenu1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
 
-        ItmProductSold.setText("Products Sold");
-        ItmProductSold.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItmProductSoldActionPerformed(evt);
-            }
-        });
-        jMenu1.add(ItmProductSold);
-
+        ItmProduct.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
         ItmProduct.setText("  Products");
         ItmProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,18 +74,21 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         });
         jMenu1.add(ItmProduct);
 
+        ItmProductSold.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
+        ItmProductSold.setText("Products Sold");
+        ItmProductSold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmProductSoldActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ItmProductSold);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Modify");
+        jMenu2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
 
-        ItmModifySale.setText("Sale");
-        ItmModifySale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItmModifySaleActionPerformed(evt);
-            }
-        });
-        jMenu2.add(ItmModifySale);
-
+        ItmModifyProduct.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
         ItmModifyProduct.setText("Product");
         ItmModifyProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,10 +97,21 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         });
         jMenu2.add(ItmModifyProduct);
 
+        ItmModifySale.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
+        ItmModifySale.setText("Sale");
+        ItmModifySale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmModifySaleActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ItmModifySale);
+
         jMenuBar1.add(jMenu2);
 
         jMenu4.setText("Show");
+        jMenu4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
 
+        ItmShowProduct.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
         ItmShowProduct.setText("Products");
         ItmShowProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +120,7 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         });
         jMenu4.add(ItmShowProduct);
 
+        ItmShowSales.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
         ItmShowSales.setText("Sales");
         ItmShowSales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +149,7 @@ public class FrmInventoryStart extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(19, 19, 19))
         );
@@ -157,23 +170,31 @@ public class FrmInventoryStart extends javax.swing.JFrame {
     }//GEN-LAST:event_ItmProductActionPerformed
 
     private void ItmModifySaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmModifySaleActionPerformed
-        
+        ModifyProduct obj = new ModifyProduct();
+        obj.setVisible(true);
+        obj.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_ItmModifySaleActionPerformed
 
     private void ItmModifyProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmModifyProductActionPerformed
-        
+        ModifySale obj = new ModifySale();
+        obj.setVisible(true);
+        obj.setLocationRelativeTo(null);
+        this.dispose();        
     }//GEN-LAST:event_ItmModifyProductActionPerformed
 
     private void ItmShowProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmShowProductActionPerformed
-        ModifyProduct frmProduct =new ModifyProduct();
-        frmProduct.setVisible(true);
-        this.setVisible(false);
+        AllProduct obj = new AllProduct();
+        obj.setVisible(true);
+        obj.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_ItmShowProductActionPerformed
 
     private void ItmShowSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmShowSalesActionPerformed
-        ModifySale frmProduct =new ModifySale();
-        frmProduct.setVisible(true);
-        this.setVisible(false);
+        AllSales obj = new AllSales();
+        obj.setVisible(true);
+        obj.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_ItmShowSalesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

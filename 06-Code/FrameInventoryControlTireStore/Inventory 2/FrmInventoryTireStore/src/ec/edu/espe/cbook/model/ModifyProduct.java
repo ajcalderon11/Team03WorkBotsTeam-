@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
 import ec.edu.espe.cbook.view.FrmInventory;
+import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -169,7 +170,7 @@ public class ModifyProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        FrmInventory frmContacts = new FrmInventory();
+        FrmInventoryStart frmContacts = new FrmInventoryStart();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();
