@@ -4,7 +4,6 @@ package ec.edu.espe.cbook.model;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
-import ec.edu.espe.cbook.view.FrmInventory;
 import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -30,8 +29,8 @@ public class ModifyProduct extends javax.swing.JFrame {
         initComponents();
         tblContacts.setModel(tabla);
         
-        tabla.addColumn("ID CLOUD");tabla.addColumn("ID TIRE");tabla.addColumn("QUANTITY");
-        tabla.addColumn("NAME");tabla.addColumn("PRICE");tabla.addColumn("CONDITION");
+        tabla.addColumn("ID CLOUD");tabla.addColumn("ID TIRE");tabla.addColumn("NAME");tabla.addColumn("QUANTITY");
+        tabla.addColumn("PRICE UNITARY");tabla.addColumn("TOTAL PRICE");tabla.addColumn("CONDITION");
         tabla.addColumn("DATE");tabla.addColumn("COMMENT");
     }
 

@@ -4,7 +4,6 @@ package ec.edu.espe.cbook.model;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
-import ec.edu.espe.cbook.view.FrmInventory;
 import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -31,7 +30,7 @@ public class ModifySale extends javax.swing.JFrame {
         tblSales.setModel(tabla2);
         
         tabla2.addColumn("ID CLOUD");tabla2.addColumn("ID TIRE");tabla2.addColumn("QUANTITY");
-        tabla2.addColumn("PRICE");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
+        tabla2.addColumn("PRICE UNITARY");tabla2.addColumn("TOTAL PRICE");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
     }
 
     @SuppressWarnings("unchecked")

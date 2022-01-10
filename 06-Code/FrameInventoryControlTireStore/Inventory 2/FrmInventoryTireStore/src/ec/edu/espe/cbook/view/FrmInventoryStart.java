@@ -35,24 +35,23 @@ public class FrmInventoryStart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ItmProduct = new javax.swing.JMenuItem();
         ItmProductSold = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        ItmModifyProduct = new javax.swing.JMenuItem();
         ItmModifySale = new javax.swing.JMenuItem();
+        ItmModifyProduct = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         ItmShowProduct = new javax.swing.JMenuItem();
         ItmShowSales = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel1.setText("WELCOME TO INVENTORY TIRE STORE ");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jButton1.setText("EXIT");
@@ -61,6 +60,27 @@ public class FrmInventoryStart extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 70, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/cbook/view/Grupo Tire Experts.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 230, 211));
+
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel1.setText("WELCOME TO INVENTORY TIRE STORE");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, -1));
 
         jMenu1.setText("Add");
         jMenu1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
@@ -88,23 +108,23 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         jMenu2.setText("Modify");
         jMenu2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
 
-        ItmModifyProduct.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
-        ItmModifyProduct.setText("Product");
-        ItmModifyProduct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItmModifyProductActionPerformed(evt);
-            }
-        });
-        jMenu2.add(ItmModifyProduct);
-
         ItmModifySale.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
-        ItmModifySale.setText("Sale");
+        ItmModifySale.setText("Product");
         ItmModifySale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ItmModifySaleActionPerformed(evt);
             }
         });
         jMenu2.add(ItmModifySale);
+
+        ItmModifyProduct.setFont(new java.awt.Font("Bodoni MT", 0, 12)); // NOI18N
+        ItmModifyProduct.setText("Sale");
+        ItmModifyProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmModifyProductActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ItmModifyProduct);
 
         jMenuBar1.add(jMenu2);
 
@@ -132,27 +152,6 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
-                .addGap(26, 26, 26))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(19, 19, 19))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -198,8 +197,7 @@ public class FrmInventoryStart extends javax.swing.JFrame {
     }//GEN-LAST:event_ItmShowSalesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-        
+        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -246,9 +244,11 @@ public class FrmInventoryStart extends javax.swing.JFrame {
     private javax.swing.JMenuItem ItmShowSales;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
