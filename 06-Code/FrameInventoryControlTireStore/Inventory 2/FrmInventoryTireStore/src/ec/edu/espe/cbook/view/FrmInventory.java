@@ -444,7 +444,9 @@ public class FrmInventory extends javax.swing.JFrame {
         int multiply, multiplier , product;
         multiply = Integer.parseInt(txtQuantity.getText());
         multiplier = Integer.parseInt(txtPrice.getText());
+       
         
+        multiplier = Integer.parseInt(txtPrice.getText());
         product = multiply * multiplier;
         txtTotal .setText(String.valueOf(product));
     }

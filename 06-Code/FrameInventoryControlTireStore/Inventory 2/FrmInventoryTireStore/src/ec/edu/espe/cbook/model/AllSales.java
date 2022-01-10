@@ -31,7 +31,7 @@ public class AllSales extends javax.swing.JFrame {
         tblSales.setModel(tabla2);
         
         tabla2.addColumn("ID CLOUD");tabla2.addColumn("ID TIRE");tabla2.addColumn("QUANTITY");
-        tabla2.addColumn("PRICE UNITARY");tabla2.addColumn("TOTAL PRICE");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
+        tabla2.addColumn("PRICE UNITARY");tabla2.addColumn("TOTAL PRICE");tabla2.addColumn("DISCOUNT");tabla2.addColumn("TOTAL PRICE DISCOUNT");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
     }
 
     @SuppressWarnings("unchecked")
