@@ -4,6 +4,7 @@ package ec.edu.espe.cbook.model;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import ec.edu.espe.cbook.view.FrmInventory;
+import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -23,18 +24,17 @@ public class AllSales extends javax.swing.JFrame {
         public boolean isCellEditable(int row, int column) {
             return false; //To change body of generated methods, choose Tools | Templates.
         }
-        //
+        
     };
     public AllSales() {
         initComponents();
         tblSales.setModel(tabla2);
         
         tabla2.addColumn("ID CLOUD");tabla2.addColumn("ID TIRE");tabla2.addColumn("QUANTITY");
-        tabla2.addColumn("PRICE");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
+        tabla2.addColumn("PRICE UNITARY");tabla2.addColumn("TOTAL PRICE");tabla2.addColumn("DISCOUNT");tabla2.addColumn("TOTAL PRICE DISCOUNT");tabla2.addColumn("DATE");tabla2.addColumn("COMMENTS");
     }
-//
+
     @SuppressWarnings("unchecked")
-    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -106,7 +106,7 @@ public class AllSales extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         MongoCursor<Document> consult = SaleRecord.find().iterator();
- //       
+        
         int total = tabla2.getRowCount();
         for(int i = 0; i<total; i++){
             tabla2.removeRow(0);
@@ -116,14 +116,14 @@ public class AllSales extends javax.swing.JFrame {
             tabla2.addRow(doc.toArray());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-//
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        FrmInventory frmContacts = new FrmInventory();
+        FrmInventoryStart frmContacts = new FrmInventoryStart();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-//
+
     /**
      * @param args the command line arguments
      */
@@ -158,7 +158,7 @@ public class AllSales extends javax.swing.JFrame {
             }
         });
     }
-//
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

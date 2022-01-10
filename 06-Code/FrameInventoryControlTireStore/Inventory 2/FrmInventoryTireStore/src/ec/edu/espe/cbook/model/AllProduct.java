@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import com.mongodb.client.MongoCursor;
 import ec.edu.espe.cbook.view.FrmInventory;
+import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
@@ -23,15 +24,15 @@ public class AllProduct extends javax.swing.JFrame {
         public boolean isCellEditable(int row, int column) {
             return false; //To change body of generated methods, choose Tools | Templates.
         }
- //       
+        
     };
     public AllProduct() {
         initComponents();
         tblContacts.setModel(tabla);
         
         tabla.addColumn("ID CLOUD");tabla.addColumn("ID TIRE");tabla.addColumn("NAME");
-        ;tabla.addColumn("QUANTITY");tabla.addColumn("PRICE");tabla.addColumn("CONDITION");
-        tabla.addColumn("DATE");tabla.addColumn("COMMENT");
+        ;tabla.addColumn("QUANTITY");tabla.addColumn("PRICE UNITARY");tabla.addColumn("TOTAL PRICE");
+        tabla.addColumn("CONDITION");tabla.addColumn("DATE");tabla.addColumn("COMMENT");
     }
 
     @SuppressWarnings("unchecked")
@@ -42,6 +43,7 @@ public class AllProduct extends javax.swing.JFrame {
         tblContacts = new javax.swing.JTable();
         jToggleButton1 = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,21 +83,30 @@ public class AllProduct extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addGap(37, 37, 37)
-                .addComponent(jButton1)
-                .addGap(68, 68, 68))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jToggleButton1)
+                                .addGap(37, 37, 37)
+                                .addComponent(jButton1)
+                                .addGap(68, 68, 68))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(362, 362, 362))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton1)
                     .addComponent(jButton1))
@@ -104,18 +115,18 @@ public class AllProduct extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-//
+
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         view();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FrmInventory frmContacts = new FrmInventory();
+        FrmInventoryStart frmContacts = new FrmInventoryStart();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-//
+
 public void view(){
         
         MongoCursor<Document> consult = PurchaseRecord.find().iterator();
@@ -166,10 +177,9 @@ public void view(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTable tblContacts;
     // End of variables declaration//GEN-END:variables
 }
-
-//declaration

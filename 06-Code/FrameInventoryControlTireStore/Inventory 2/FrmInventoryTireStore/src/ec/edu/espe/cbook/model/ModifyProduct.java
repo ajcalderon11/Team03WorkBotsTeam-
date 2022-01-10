@@ -4,7 +4,7 @@ package ec.edu.espe.cbook.model;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
-import ec.edu.espe.cbook.view.FrmInventory;
+import ec.edu.espe.cbook.view.FrmInventoryStart;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 
 /**
  *
- * @author Andy Calderon
+ * @author Caisatoa
  */
 public class ModifyProduct extends javax.swing.JFrame {
 
@@ -29,8 +29,8 @@ public class ModifyProduct extends javax.swing.JFrame {
         initComponents();
         tblContacts.setModel(tabla);
         
-        tabla.addColumn("ID CLOUD");tabla.addColumn("ID TIRE");tabla.addColumn("QUANTITY");
-        tabla.addColumn("NAME");tabla.addColumn("PRICE");tabla.addColumn("CONDITION");
+        tabla.addColumn("ID CLOUD");tabla.addColumn("ID TIRE");tabla.addColumn("NAME");tabla.addColumn("QUANTITY");
+        tabla.addColumn("PRICE UNITARY");tabla.addColumn("TOTAL PRICE");tabla.addColumn("CONDITION");
         tabla.addColumn("DATE");tabla.addColumn("COMMENT");
     }
 
@@ -169,7 +169,7 @@ public class ModifyProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        FrmInventory frmContacts = new FrmInventory();
+        FrmInventoryStart frmContacts = new FrmInventoryStart();
         frmContacts.setVisible(true);
         frmContacts.setLocationRelativeTo(null);
         this.dispose();

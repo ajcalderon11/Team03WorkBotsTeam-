@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 
 /**
  *
- * @author Caisatoa
+ * @author Andy Calderon
  */
 public class ModifySale extends javax.swing.JFrame {
 
