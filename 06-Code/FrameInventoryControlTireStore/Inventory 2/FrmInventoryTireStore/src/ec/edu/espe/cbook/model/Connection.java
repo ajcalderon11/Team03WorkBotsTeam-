@@ -16,7 +16,7 @@ public class Connection {
     
 
 
-ConnectionString connectionString = new ConnectionString("mongodb+srv://dmcruz3:dmcruz3@clusteroop.jkru3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+ConnectionString connectionString = new ConnectionString("mongodb+srv://KerlyCorrea:<password>@cluster0.bioem.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 MongoClientSettings settings = MongoClientSettings.builder()
         .applyConnectionString(connectionString)
         .build();
