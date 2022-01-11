@@ -14,7 +14,7 @@ import ec.edu.espe.cbook.model.SaleUpload;
 
 /**
  *
- * @author Kerly Correa- Sebastián Caisatoa
+ * @author TeamWorkBots
  */
 public class FrmInventoryStart extends javax.swing.JFrame {
 
