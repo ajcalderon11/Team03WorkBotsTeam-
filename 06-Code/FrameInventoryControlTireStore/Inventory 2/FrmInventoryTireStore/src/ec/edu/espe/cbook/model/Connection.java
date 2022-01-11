@@ -9,14 +9,15 @@ import com.mongodb.client.MongoDatabase;
 
 /**
  *
- * @author Caisatoa
+ * @author TeamWorkBots
  */
 public class Connection {
     
     
 
 
-ConnectionString connectionString = new ConnectionString("mongodb+srv://dmcruz3:dmcruz3@clusteroop.jkru3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+
+ConnectionString connectionString = new ConnectionString("mongodb+srv://ajcalderon:ajcalderon@clusteroop.l8hmv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 MongoClientSettings settings = MongoClientSettings.builder()
         .applyConnectionString(connectionString)
         .build();

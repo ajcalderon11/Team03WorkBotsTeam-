@@ -3,7 +3,7 @@ package ec.edu.espe.cbook.model;
 
 /**
  *
- * @author Andy Calderon
+ * @author TeamWorkBots
  */
 public class Contact {
     private int id;

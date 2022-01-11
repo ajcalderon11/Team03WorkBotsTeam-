@@ -12,7 +12,7 @@ import org.bson.Document;
 
 /**
  *
- * @author Caisatoa
+ * @author TeamWorkBots
  */
 public class RegisterSale extends javax.swing.JFrame {
 

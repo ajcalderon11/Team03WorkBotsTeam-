@@ -10,7 +10,7 @@ import com.mongodb.client.MongoDatabase;
 
 /**
  *
- * @author Caisatoa
+ * @author TeamWorkBots
  */
 public class Connection {
   //  

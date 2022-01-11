@@ -9,7 +9,7 @@ import org.bson.types.ObjectId;
 
 /**
  *
- * @author Caisatoa
+ * @author TeamWorkBots
  */
 public class SaleUpload extends javax.swing.JDialog {
 

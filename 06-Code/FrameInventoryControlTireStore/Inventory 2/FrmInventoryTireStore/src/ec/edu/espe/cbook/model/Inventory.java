@@ -3,7 +3,7 @@ package ec.edu.espe.cbook.model;
 
 /**
  *
- * @author Caisatoa
+ * @author TeamWorkBots
  */
 public class Inventory {
     private int id;
