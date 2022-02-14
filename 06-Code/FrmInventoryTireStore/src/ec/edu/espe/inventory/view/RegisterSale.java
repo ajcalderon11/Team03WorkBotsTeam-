@@ -1,9 +1,9 @@
 
-package ec.edu.espe.cbook.view;
+package ec.edu.espe.inventory.view;
 
 import com.mongodb.client.MongoCollection;
 import ec.edu.espe.cbook.model.Connection;
-import ec.edu.espe.cbook.view.FrmInventoryStart;
+import ec.edu.espe.inventory.view.FrmInventoryStart;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;

@@ -1,5 +1,5 @@
 
-package ec.edu.espe.cbook.view;
+package ec.edu.espe.inventory.view;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;

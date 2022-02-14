@@ -1,5 +1,5 @@
 
-package ec.edu.espe.cbook.view;
+package ec.edu.espe.inventory.view;
 /**
  *
  * @author Kerly Correa- Sebastián Caisatoa
@@ -44,7 +44,7 @@ public class FrmInventoryStart extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 70, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/cbook/view/Grupo Tire Experts.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/inventory/view/Grupo Tire Experts.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 230, 211));
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
