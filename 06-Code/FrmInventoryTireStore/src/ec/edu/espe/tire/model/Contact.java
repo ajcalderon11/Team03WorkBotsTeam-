@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/model/Contact.java
 package ec.edu.espe.tire.model;
-=======
-package ec.edu.espe.inventory.model;
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/model/Contact.java
 
 /**
  *

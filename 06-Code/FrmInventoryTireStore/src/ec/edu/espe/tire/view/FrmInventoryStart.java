@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/view/FrmInventoryStart.java
 package ec.edu.espe.tire.view;
-=======
-package ec.edu.espe.inventory.view;
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/view/FrmInventoryStart.java
 /**
  *
  * @author Kerly Correa- Sebastián Caisatoa
@@ -50,12 +46,7 @@ public class FrmInventoryStart extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/view/FrmInventoryStart.java
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/tire/images/Grupo Tire Experts.png"))); // NOI18N
-=======
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/inventory/view/Grupo Tire Experts.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 230, 211));
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/view/FrmInventoryStart.java
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel1.setText("WELCOME TO INVENTORY TIRE STORE");

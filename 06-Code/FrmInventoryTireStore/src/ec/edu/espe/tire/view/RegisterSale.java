@@ -1,17 +1,9 @@
 
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/view/RegisterSale.java
 package ec.edu.espe.tire.view;
 
 import com.mongodb.client.MongoCollection;
 import ec.edu.espe.cbook.model.Connection;
 import ec.edu.espe.tire.view.FrmInventoryStart;
-=======
-package ec.edu.espe.inventory.view;
-
-import com.mongodb.client.MongoCollection;
-import ec.edu.espe.cbook.model.Connection;
-import ec.edu.espe.inventory.view.FrmInventoryStart;
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/view/RegisterSale.java
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;

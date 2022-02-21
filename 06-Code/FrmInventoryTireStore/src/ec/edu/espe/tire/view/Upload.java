@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/view/Upload.java
 package ec.edu.espe.tire.view;
-=======
-package ec.edu.espe.inventory.view;
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/view/Upload.java
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.UpdateResult;

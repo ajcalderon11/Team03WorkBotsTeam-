@@ -1,20 +1,12 @@
 
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/view/AllProduct.java
 package ec.edu.espe.tire.view;
-=======
-package ec.edu.espe.inventory.view;
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/view/AllProduct.java
 
 import com.mongodb.client.MongoCollection;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import com.mongodb.client.MongoCursor;
 import ec.edu.espe.cbook.model.Connection;
-<<<<<<< HEAD:06-Code/FrmInventoryTireStore/src/ec/edu/espe/tire/view/AllProduct.java
 import ec.edu.espe.tire.view.FrmInventoryStart;
-=======
-import ec.edu.espe.inventory.view.FrmInventoryStart;
->>>>>>> b8a79c9653c47a0da4aed205b9e557440cd22a16:06-Code/FrmInventoryTireStore/src/ec/edu/espe/inventory/view/AllProduct.java
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
