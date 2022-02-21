@@ -2,7 +2,7 @@
 package ec.edu.espe.tire.view;
 
 import com.mongodb.client.MongoCollection;
-import ec.edu.espe.cbook.model.Connection;
+import utils.Connection;
 import ec.edu.espe.tire.view.FrmInventoryStart;
 import java.util.Calendar;
 import java.util.GregorianCalendar;

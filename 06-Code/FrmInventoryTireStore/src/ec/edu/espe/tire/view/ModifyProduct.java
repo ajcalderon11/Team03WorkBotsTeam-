@@ -4,7 +4,7 @@ package ec.edu.espe.tire.view;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
-import ec.edu.espe.cbook.model.Connection;
+import utils.Connection;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

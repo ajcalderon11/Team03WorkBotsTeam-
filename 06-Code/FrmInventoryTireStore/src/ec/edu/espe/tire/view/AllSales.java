@@ -3,7 +3,7 @@ package ec.edu.espe.tire.view;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
-import ec.edu.espe.cbook.model.Connection;
+import utils.Connection;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
