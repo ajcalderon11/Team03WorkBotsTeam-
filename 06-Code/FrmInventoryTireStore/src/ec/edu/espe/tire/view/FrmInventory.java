@@ -96,12 +96,22 @@ public class FrmInventory extends javax.swing.JFrame {
         txtComments.setRows(5);
         jScrollPane1.setViewportView(txtComments);
 
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
         txtId.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtIdKeyReleased(evt);
             }
         });
 
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtNameKeyReleased(evt);
@@ -312,6 +322,14 @@ public class FrmInventory extends javax.swing.JFrame {
         char c = evt.getKeyChar();
         if( c < '0' || c > '9') evt.consume();
     }//GEN-LAST:event_txtPriceKeyTyped
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+       
+    }//GEN-LAST:event_txtIdActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     public void total() {
         int multiply, multiplier , product;

@@ -89,6 +89,17 @@ public class RegisterSale extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel8.setText("Comments:");
 
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
+            }
+        });
+
         txtQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtQuantityActionPerformed(evt);
@@ -112,6 +123,9 @@ public class RegisterSale extends javax.swing.JFrame {
         txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPriceKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPriceKeyTyped(evt);
             }
         });
 
@@ -146,6 +160,9 @@ public class RegisterSale extends javax.swing.JFrame {
         txtDiscount.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDiscountKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiscountKeyTyped(evt);
             }
         });
 
@@ -347,7 +364,60 @@ public class RegisterSale extends javax.swing.JFrame {
     private void txtQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyReleased
         char c = evt.getKeyChar();
         if( c < '0' || c > '9') evt.consume();
+        if(Character.isLetter(c)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }
     }//GEN-LAST:event_txtQuantityKeyReleased
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        char validate = evt.getKeyChar();
+        
+        if( validate < '0' || validate > '9') evt.consume();
+        if(Character.isLetter(validate)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "ID only accepts numbers");
+        }
+        
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void txtPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyTyped
+        char validate = evt.getKeyChar();
+        
+        if(Character.isLetter(validate)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "ID only accepts numbers");
+        }
+        
+//        if (validate!='.'){
+//            getToolkit().beep();
+//            evt.consume();
+//            
+//            JOptionPane.showMessageDialog(rootPane, "no insert point");
+//        }
+
+
+    }//GEN-LAST:event_txtPriceKeyTyped
+
+    private void txtDiscountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiscountKeyTyped
+        char validate = evt.getKeyChar();
+        if(Character.isLetter(validate)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "ID only accepts numbers");
+        }
+    }//GEN-LAST:event_txtDiscountKeyTyped
 
     public void total() {
         int multiply, multiplier , product;
