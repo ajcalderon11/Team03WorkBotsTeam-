@@ -2,7 +2,7 @@
 package ec.edu.espe.tire.view;
 
 import com.mongodb.client.MongoCollection;
-import ec.edu.espe.cbook.model.Connection;
+import utils.Connection;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
@@ -33,6 +33,7 @@ public class FrmInventory extends javax.swing.JFrame {
         
         txtDate.setCalendar(fecha_actual);
         setLocationRelativeTo(null);
+        btnAdd.setEnabled(false);
     }
 
     /**
@@ -95,9 +96,26 @@ public class FrmInventory extends javax.swing.JFrame {
         txtComments.setRows(5);
         jScrollPane1.setViewportView(txtComments);
 
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtIdKeyReleased(evt);
+            }
+        });
+
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNameKeyReleased(evt);
+            }
+        });
+
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPriceActionPerformed(evt);
+            }
+        });
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPriceKeyTyped(evt);
             }
         });
 
@@ -282,6 +300,19 @@ public class FrmInventory extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuantityActionPerformed
 
+    private void txtIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyReleased
+        
+    }//GEN-LAST:event_txtIdKeyReleased
+
+    private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
+        hability();
+    }//GEN-LAST:event_txtNameKeyReleased
+
+    private void txtPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyTyped
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtPriceKeyTyped
+
     public void total() {
         int multiply, multiplier , product;
         multiply = Integer.parseInt(txtQuantity.getText());
@@ -298,8 +329,8 @@ public class FrmInventory extends javax.swing.JFrame {
             data.put("ID", Integer.parseInt(txtId.getText()));
             data.put("NAME", txtName.getText());
             data.put("QUANTITY", Integer.parseInt(txtQuantity.getText()));
-            data.put("PRICE UNITARY", txtPrice.getText());
-            data.put("TOTAL PRICE", txtTotal.getText());
+            data.put("PRICE UNITARY", Float.parseFloat(txtPrice.getText()));
+            data.put("TOTAL PRICE", Float.parseFloat(txtTotal.getText()));
             data.put("CONDITION", txtCondition.getSelectedItem().toString());
             data.put("DATE", txtDate.getDate().toString());
             data.put("COMMENTS", txtComments.getText());
@@ -311,6 +342,13 @@ public class FrmInventory extends javax.swing.JFrame {
         } catch(Exception err){
             JOptionPane.showMessageDialog(this, "ERROR");
         }
+    }
+    public void hability(){
+        if(!txtName.getText().isEmpty()){
+            btnAdd.setEnabled(true);
+        } else {
+            btnAdd.setEnabled(false);
+        }            
     }
     /**
      * @param args the command line arguments

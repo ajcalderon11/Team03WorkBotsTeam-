@@ -2,7 +2,7 @@
 package ec.edu.espe.tire.view;
 
 import com.mongodb.client.MongoCollection;
-import ec.edu.espe.cbook.model.Connection;
+import utils.Connection;
 import ec.edu.espe.tire.view.FrmInventoryStart;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -94,6 +94,11 @@ public class RegisterSale extends javax.swing.JFrame {
                 txtQuantityActionPerformed(evt);
             }
         });
+        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtQuantityKeyReleased(evt);
+            }
+        });
 
         txtComments.setColumns(20);
         txtComments.setRows(5);
@@ -102,6 +107,11 @@ public class RegisterSale extends javax.swing.JFrame {
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPriceActionPerformed(evt);
+            }
+        });
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPriceKeyReleased(evt);
             }
         });
 
@@ -132,6 +142,12 @@ public class RegisterSale extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel11.setText("Total Price with discount");
+
+        txtDiscount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDiscountKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -317,6 +333,21 @@ public class RegisterSale extends javax.swing.JFrame {
     private void txtTotalWithDiscountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalWithDiscountActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalWithDiscountActionPerformed
+
+    private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtPriceKeyReleased
+
+    private void txtDiscountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiscountKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtDiscountKeyReleased
+
+    private void txtQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtQuantityKeyReleased
 
     public void total() {
         int multiply, multiplier , product;

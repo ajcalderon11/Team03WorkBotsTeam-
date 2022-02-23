@@ -82,6 +82,12 @@ public class SaleUpload extends javax.swing.JDialog {
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel8.setText("Comments:");
 
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPriceKeyReleased(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel3.setText("Sale Price:");
 
@@ -93,6 +99,12 @@ public class SaleUpload extends javax.swing.JDialog {
         jLabel6.setText("Discount");
 
         jLabel9.setText("Total Price with discount");
+
+        txtDiscount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDiscountKeyReleased(evt);
+            }
+        });
 
         txtTotalWithDiscount.setForeground(new java.awt.Color(102, 102, 102));
         txtTotalWithDiscount.setText("Do not enter anything ...");
@@ -259,6 +271,16 @@ public class SaleUpload extends javax.swing.JDialog {
         modifySale.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtPriceKeyReleased
+
+    private void txtDiscountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiscountKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtDiscountKeyReleased
 
     public void total() {
         int multiply, multiplier , product;

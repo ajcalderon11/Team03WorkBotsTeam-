@@ -228,6 +228,9 @@
         <Component class="javax.swing.JTextField" name="txtId">
         </Component>
         <Component class="javax.swing.JTextField" name="txtPrice">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPriceKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -263,6 +266,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDiscount">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDiscountKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTotalWithDiscount">
           <Properties>

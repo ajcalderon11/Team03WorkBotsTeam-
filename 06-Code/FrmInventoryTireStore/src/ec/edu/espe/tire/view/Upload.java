@@ -67,6 +67,12 @@ public class Upload extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 102));
 
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPriceKeyReleased(evt);
+            }
+        });
+
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel8.setText("Date:");
 
@@ -99,6 +105,12 @@ public class Upload extends javax.swing.JDialog {
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel6.setText("Quantity:");
+
+        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtQuantityKeyReleased(evt);
+            }
+        });
 
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setText("Do not enter anything ...");
@@ -246,6 +258,16 @@ public class Upload extends javax.swing.JDialog {
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
         upload();
     }//GEN-LAST:event_btnUploadActionPerformed
+
+    private void txtQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtQuantityKeyReleased
+
+    private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+    }//GEN-LAST:event_txtPriceKeyReleased
 
     public void total() {
         int multiply, multiplier , product;

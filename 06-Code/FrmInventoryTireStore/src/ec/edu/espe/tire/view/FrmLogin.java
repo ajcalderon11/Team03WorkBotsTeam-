@@ -18,6 +18,7 @@ public class FrmLogin extends javax.swing.JFrame {
     public FrmLogin() {
         initComponents();
         setLocationRelativeTo(null);
+        //btnSingIn.setEnabled(false);
     }
 
     /**
@@ -70,12 +71,25 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
 
+        txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtUserKeyReleased(evt);
+            }
+        });
+
         btnSingIn.setBackground(new java.awt.Color(153, 255, 153));
         btnSingIn.setFont(new java.awt.Font("Bodoni MT", 3, 18)); // NOI18N
         btnSingIn.setText("SIGN IN");
+        btnSingIn.setEnabled(false);
         btnSingIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSingInActionPerformed(evt);
+            }
+        });
+
+        PswPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PswPasswordKeyReleased(evt);
             }
         });
 
@@ -158,6 +172,14 @@ public class FrmLogin extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
+    private void txtUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyReleased
+        hability();
+    }//GEN-LAST:event_txtUserKeyReleased
+
+    private void PswPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PswPasswordKeyReleased
+        hability();
+    }//GEN-LAST:event_PswPasswordKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -191,6 +213,13 @@ public class FrmLogin extends javax.swing.JFrame {
                 new FrmLogin().setVisible(true);
             }
         });
+    }
+    public void hability(){
+        if(!txtUser.getText().isEmpty()){
+            btnSingIn.setEnabled(true);
+        } else {
+            btnSingIn.setEnabled(false);
+        }            
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Images;
