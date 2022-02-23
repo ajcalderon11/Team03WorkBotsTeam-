@@ -86,10 +86,19 @@ public class SaleUpload extends javax.swing.JDialog {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPriceKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPriceKeyTyped(evt);
+            }
         });
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel3.setText("Sale Price:");
+
+        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQuantityKeyTyped(evt);
+            }
+        });
 
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setText("Do not enter anything ...");
@@ -281,6 +290,28 @@ public class SaleUpload extends javax.swing.JDialog {
         char c = evt.getKeyChar();
         if( c < '0' || c > '9') evt.consume();
     }//GEN-LAST:event_txtDiscountKeyReleased
+
+    private void txtPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyTyped
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+        if(Character.isLetter(c)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }
+    }//GEN-LAST:event_txtPriceKeyTyped
+
+    private void txtQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyTyped
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+        if(Character.isLetter(c)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }
+    }//GEN-LAST:event_txtQuantityKeyTyped
 
     public void total() {
         int multiply, multiplier , product;
