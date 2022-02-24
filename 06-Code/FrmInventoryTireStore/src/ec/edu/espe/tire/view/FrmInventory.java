@@ -33,7 +33,6 @@ public class FrmInventory extends javax.swing.JFrame {
         
         txtDate.setCalendar(fecha_actual);
         setLocationRelativeTo(null);
-        btnAdd.setEnabled(false);
     }
 
     /**
@@ -124,6 +123,9 @@ public class FrmInventory extends javax.swing.JFrame {
             }
         });
         txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPriceKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPriceKeyTyped(evt);
             }
@@ -143,6 +145,11 @@ public class FrmInventory extends javax.swing.JFrame {
                 txtQuantityActionPerformed(evt);
             }
         });
+        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtQuantityKeyReleased(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel6.setText("Quantity");
@@ -150,6 +157,7 @@ public class FrmInventory extends javax.swing.JFrame {
         txtTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setText("Do not enter anything...");
+        txtTotal.setEnabled(false);
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel9.setText("Price Total:");
@@ -311,11 +319,25 @@ public class FrmInventory extends javax.swing.JFrame {
     }//GEN-LAST:event_txtQuantityActionPerformed
 
     private void txtIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyReleased
-        
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+        if(Character.isLetter(c)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }  
     }//GEN-LAST:event_txtIdKeyReleased
 
     private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
-        hability();
+        char validate = evt.getKeyChar();
+        
+        if(Character.isDigit(validate)&&validate!='.'){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter Only Letters");
+        }
     }//GEN-LAST:event_txtNameKeyReleased
 
     private void txtPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyTyped
@@ -330,6 +352,28 @@ public class FrmInventory extends javax.swing.JFrame {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+        if(Character.isLetter(c)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }  
+    }//GEN-LAST:event_txtQuantityKeyReleased
+
+    private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
+        char c = evt.getKeyChar();
+        if( c < '0' || c > '9') evt.consume();
+        if(Character.isLetter(c)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }  
+    }//GEN-LAST:event_txtPriceKeyReleased
 
     public void total() {
         int multiply, multiplier , product;

@@ -134,6 +134,7 @@ public class RegisterSale extends javax.swing.JFrame {
 
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setText("Do not enter anything ...");
+        txtTotal.setEnabled(false);
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalActionPerformed(evt);
@@ -142,6 +143,7 @@ public class RegisterSale extends javax.swing.JFrame {
 
         txtTotalWithDiscount.setForeground(new java.awt.Color(102, 102, 102));
         txtTotalWithDiscount.setText("Do not enter anything ...");
+        txtTotalWithDiscount.setEnabled(false);
         txtTotalWithDiscount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalWithDiscountActionPerformed(evt);
@@ -352,13 +354,27 @@ public class RegisterSale extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTotalWithDiscountActionPerformed
 
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
-        char c = evt.getKeyChar();
-        if( c < '0' || c > '9') evt.consume();
+        char validate = evt.getKeyChar();
+        
+        if( validate < '0' || validate > '9') evt.consume();
+        if(Character.isLetter(validate)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "ID only accepts numbers");
+        }
     }//GEN-LAST:event_txtPriceKeyReleased
 
     private void txtDiscountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiscountKeyReleased
-        char c = evt.getKeyChar();
-        if( c < '0' || c > '9') evt.consume();
+        char validate = evt.getKeyChar();
+        
+        if( validate < '0' || validate > '9') evt.consume();
+        if(Character.isLetter(validate)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "ID only accepts numbers");
+        }
     }//GEN-LAST:event_txtDiscountKeyReleased
 
     private void txtQuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyReleased

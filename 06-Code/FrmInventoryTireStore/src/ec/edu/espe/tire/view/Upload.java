@@ -61,7 +61,7 @@ public class Upload extends javax.swing.JDialog {
         txtTotal = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         btnUpload = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -126,6 +126,7 @@ public class Upload extends javax.swing.JDialog {
 
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setText("Do not enter anything ...");
+        txtTotal.setEnabled(false);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel7.setText("Total Price:");
@@ -139,9 +140,14 @@ public class Upload extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 255));
-        jButton1.setFont(new java.awt.Font("Bodoni MT", 3, 14)); // NOI18N
-        jButton1.setText("RETURN");
+        btnReturn.setBackground(new java.awt.Color(102, 102, 255));
+        btnReturn.setFont(new java.awt.Font("Bodoni MT", 3, 14)); // NOI18N
+        btnReturn.setText("RETURN");
+        btnReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -181,7 +187,7 @@ public class Upload extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnUpload)
                                 .addGap(37, 37, 37)
-                                .addComponent(jButton1)
+                                .addComponent(btnReturn)
                                 .addGap(86, 86, 86))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -246,7 +252,7 @@ public class Upload extends javax.swing.JDialog {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnUpload)
-                                    .addComponent(jButton1))
+                                    .addComponent(btnReturn))
                                 .addGap(26, 26, 26))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,6 +323,13 @@ public class Upload extends javax.swing.JDialog {
         }    
     }//GEN-LAST:event_txtNameKeyReleased
 
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+        ModifyProduct modifyProduct = new ModifyProduct();
+        modifyProduct.setVisible(true);
+        modifyProduct.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnReturnActionPerformed
+
     public void total() {
         int multiply, multiplier , product;
         multiply = Integer.parseInt(txtQuantity.getText());
@@ -381,8 +394,8 @@ public class Upload extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnUpload;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

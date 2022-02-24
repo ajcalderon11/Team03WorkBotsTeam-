@@ -105,6 +105,7 @@ public class SaleUpload extends javax.swing.JDialog {
 
         txtTotal.setForeground(new java.awt.Color(102, 102, 102));
         txtTotal.setText("Do not enter anything ...");
+        txtTotal.setEnabled(false);
 
         jLabel1.setText("Total Price:");
 
@@ -120,6 +121,7 @@ public class SaleUpload extends javax.swing.JDialog {
 
         txtTotalWithDiscount.setForeground(new java.awt.Color(102, 102, 102));
         txtTotalWithDiscount.setText("Do not enter anything ...");
+        txtTotalWithDiscount.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
